@@ -27,8 +27,11 @@ def main():
         choosenStock = firstCol.selectbox("Stock", options=stockDict.keys())
         # Displays ticker name of the selected stock
         choosenTicker = stockDict[choosenStock]
+        
+        # Assigns one year ago as default beginning date
+        defaultBegDate= datetime.datetime(datetime.datetime.now().year-1, datetime.datetime.now().month, datetime.datetime.now().day)
         # Calender components for user's date entry
-        startDate = firstCol.date_input("Pick a start date ", max_value= datetime.datetime.now ())
+        startDate = firstCol.date_input("Pick a start date ",value= defaultBegDate, max_value= datetime.datetime.now ())
         secCol._text_input("Ticker", choosenTicker, disabled=True)
         endDate = secCol.date_input("Pick an end date", min_value= startDate, max_value= datetime.datetime.now ())
 
