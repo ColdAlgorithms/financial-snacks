@@ -1,4 +1,3 @@
-import yfinance as yf
 import yahoo_fin.stock_info as si
 import datetime
 import streamlit as st
